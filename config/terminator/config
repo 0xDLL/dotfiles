@@ -1,0 +1,23 @@
+[global_config]
+  borderless = True
+  enabled_plugins = TerminalShot, LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Ubuntu Mono Bold 16
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
