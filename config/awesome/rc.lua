@@ -1,10 +1,4 @@
 -- sudo apt install -y picom dmenu flameshot xed git polybar fonts-font-awesome terminator fonts-opensymbol fonts-powerline
--- POLYBAR
--- cp /usr/share/doc/polybar/config .
--- FONT AWESOME/NERD FONT
--- wget https://use.fontawesome.com/releases/v6.5.1/fontawesome-free-6.5.1-desktop.zip
--- wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/NerdFontsSymbolsOnly.zip
--- mkdir ~/.fonts
 
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
@@ -615,6 +609,9 @@ beautiful.useless_gap = 5
 
 -- Autostart programs
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("feh --bg-fill -r --randomize ~/.config/wallpapers/")
-awful.spawn.with_shell("killall -q polybar") 
-awful.spawn.with_shell("polybar bar1 &")
+awful.spawn.with_shell("sleep 1; feh --bg-fill -r --randomize ~/.config/wallpapers/")
+awful.spawn.with_shell("sleep 1; killall -q polybar") 
+awful.spawn.with_shell("sleep 1; polybar bar1 &")
+
+-- Fixing copy and paste VMware
+awful.util.spawn_with_shell("vmware-user-suid-wrapper --no--startup-id")
