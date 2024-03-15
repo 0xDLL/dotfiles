@@ -356,6 +356,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "m", function () awful.util.spawn("pcmanfm") end,
               {description = "start File browser", group = "launcher"}),
 
+   -- Lock Screen
+    awful.key({ modkey }, "å", function () awful.util.spawn("cinnamon-screensaver-command --lock ") end,
+              {description = "Lock the screen", group = "launcher"}),
+
     --awful.key({ modkey }, "x",
     --          function ()
     --              awful.prompt.run {
