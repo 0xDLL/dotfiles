@@ -1,7 +1,3 @@
--- sudo apt install -y picom dmenu flameshot xed git polybar fonts-font-awesome terminator fonts-opensymbol fonts-powerline p7zip-full
--- NERD FONT
--- mkdir -p ~/.local/share/fonts; cd /dev/shm; wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/SpaceMono.zip && 7z x SpaceMono.zip; mv *.ttf ~/.local/share/fonts; fc-cache -f -v
-
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
