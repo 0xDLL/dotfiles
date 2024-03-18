@@ -183,15 +183,15 @@ awful.screen.connect_for_each_screen(function(s)
 
 --BARONTOP
     -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
+--    s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
-    s.mylayoutbox = awful.widget.layoutbox(s)
-    s.mylayoutbox:buttons(gears.table.join(
-                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
-                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
+--    s.mylayoutbox = awful.widget.layoutbox(s)
+--    s.mylayoutbox:buttons(gears.table.join(
+--                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
+--                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
+--                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
+--                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
 --    -- Create a taglist widget
 --    s.mytaglist = awful.widget.taglist {
 --        screen  = s,
@@ -340,9 +340,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "v", function () awful.util.spawn("flameshot gui") end,
               {description = "take Screenshot", group = "launcher"}),
 
-    -- Notepad (xed)
-    awful.key({ modkey }, "z", function () awful.util.spawn("xed") end,
-              {description = "start notepad (xed)", group = "launcher"}),
+    -- Mousepad
+    awful.key({ modkey }, "z", function () awful.util.spawn("mousepad") end,
+              {description = "start Mousepad", group = "launcher"}),
 
     -- Sublime Text
     awful.key({ modkey }, "n", function () awful.util.spawn("subl") end,
@@ -611,9 +611,9 @@ beautiful.useless_gap = 5
 
 -- Autostart programs
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("sleep 1; feh --bg-fill -r --randomize ~/.config/wallpapers/")
+awful.spawn.with_shell("sleep 2; feh --bg-fill -r --randomize ~/.config/wallpapers/")
 awful.spawn.with_shell("sleep 1; killall -q polybar") 
-awful.spawn.with_shell("sleep 1; polybar bar1 &")
+awful.spawn.with_shell("sleep 3; polybar bar1 &")
 
 -- Fixing copy and paste VMware
 awful.util.spawn_with_shell("vmware-user-suid-wrapper --no--startup-id")
