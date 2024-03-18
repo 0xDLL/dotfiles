@@ -7,6 +7,11 @@ alert = #ff5555
 disabled = #6272a4
 foreground-alt = #555
 orange = #ffb86c
+comment = #6272A4
+green = #50FA7B
+purple = #BD93F9
+current-line = #44475A
+
 
 [bar/bar1]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -40,8 +45,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "SpaceMono Nerd Font:pixelsize=10;1"
 
 
-modules-left = bspwn awesome
-modules-center = mpd
+modules-left = bspwn awesome workspaces
+modules-center = mpd 
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 modules-right = updates uptime filesystem alsa memory cpu wlan eth battery date
 
@@ -172,11 +177,11 @@ label-urgent-padding = 2
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = 1
+icon-stop = 2
+icon-play = 3
+icon-pause = 4
+icon-next = 5
 
 label-song-maxlen = 25
 label-song-ellipsis = true
@@ -202,6 +207,45 @@ bar-empty-foreground = ${colors.foreground-alt}
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
+
+[module/workspaces]
+type = internal/xworkspaces
+enable-click = true
+enable-scroll = true
+; available values = %icon%, %name% and %index%
+
+; You can get a list of the defined desktops using:
+; $ xprop -root _NET_DESKTOP_NAMES
+
+icon-0 = 1;1  
+icon-1 = 2;2  
+icon-2 = 3;3  
+icon-3 = 4;4  
+icon-4 = 5;5  
+icon-5 = 6;6  
+icon-6 = 7;7  
+icon-7 = 8;8  
+icon-8 = 9;9   
+icon-default = ⭘  
+
+label-active = %{T4}  %{T}
+label-active-background = ${colors.current-line}
+label-active-foreground = ${colors.orange}
+
+label-occupied =   
+;label-occupied-underline = ${colors.secondary}
+label-occupied-foreground = ${colors.current-line}
+
+label-empty = %icon%
+label-empty-foreground = ${colors.orange}
+
+label-urgent = %icon%
+;label-urgent-underline = #FF5C75
+
+label-active-padding = 2
+label-urgent-padding = 2
+label-empty-padding = 2
+label-occupied-padding = 2
 
 [module/cpu]
 type = internal/cpu
